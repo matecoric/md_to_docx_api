@@ -7,7 +7,7 @@ from fastapi import Body, FastAPI, Response
 
 app = FastAPI()
 
-TEMPLATE_PATH = Path("manual_template_styles.docx")
+TEMPLATE_PATH = Path(__file__).parent / "manual_template_styles.docx"
 
 
 @app.post("/md-to-docx")
