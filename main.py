@@ -11,7 +11,7 @@ TEMPLATE_PATH = Path(__file__).parent / "manual_template_styles.docx"
 
 
 @app.post("/md-to-docx")
-async def zip_markdown_to_docx(file: UploadFile = File(...)):
+async def zip_markdown_to_docx(file: UploadFile = File(..., media_type="application/octet-stream")):
     # Create a temporary working directory
     with tempfile.TemporaryDirectory() as tmpdir:
         tmpdir_path = Path(tmpdir)
